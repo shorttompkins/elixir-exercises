@@ -1,4 +1,4 @@
-defmodule Chap5 do
+defmodule Chap6 do
   def gcd(x, 0), do: x
   def gcd(x, y) do
     gcd(y, rem(x,y))

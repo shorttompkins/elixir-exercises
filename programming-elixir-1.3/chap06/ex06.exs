@@ -1,4 +1,4 @@
-defmodule Chap5 do
+defmodule Chap6 do
 
   def guess(actual, lo..hi) do
     number = _middle(lo..hi)

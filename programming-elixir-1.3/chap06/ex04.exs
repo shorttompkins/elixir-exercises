@@ -1,4 +1,4 @@
-defmodule Chap5 do
+defmodule Chap6 do
   def sum(n), do: _sum(n, 0)
 
   defp _sum(0, acc), do: acc

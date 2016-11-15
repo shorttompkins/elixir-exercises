@@ -50,7 +50,7 @@ iex> quadruple(10)
 4\. Implement and run a function `sum(n)` that uses recursion to calculate the sum of the integers from 1 to _n_. (Write code in separate .exs file and load using iex.)
 
 ```
-defmodule Chap5 do
+defmodule Chap6 do
   def sum(n), do: _sum(n, 0)
 
   defp _sum(0, acc), do: acc
@@ -58,14 +58,14 @@ defmodule Chap5 do
 end
 ```
 ```
-iex> Chap5.sum(10)
+iex> Chap6.sum(10)
 55
 ```
 ---
 5\. Write a function `gcd(x,y)` that finds the greatest common divisor between two nonnegative integers.  Algebraically, _gcd(x,y)_ is _x_ if _y_ is zero; it's _gcd(y,rem(x,y))_ otherwise.
 
 ```
-defmodule Chap5 do
+defmodule Chap6 do
   def gcd(x, 0), do: x
   def gcd(x, y) do
     gcd(y, rem(x,y))
@@ -73,7 +73,7 @@ defmodule Chap5 do
 end
 ```
 ```
-iex> Chap5.gcd(8,12)
+iex> Chap6.gcd(8,12)
 4
 ```
 ---
@@ -85,7 +85,7 @@ Your API will be `guess(actual, range)`, where `range` is an Elixir range.
 
 Output should look similar to:
 ```
-iex> Chap5.guess(273,1..1000)
+iex> Chap6.guess(273,1..1000)
 Is it 500
 Is it 250
 Is it 375
@@ -97,7 +97,7 @@ Is it 273
 ```
 
 ```
-defmodule Chap5 do
+defmodule Chap6 do
 
   def guess(actual, lo..hi) do
     number = _middle(lo..hi)
