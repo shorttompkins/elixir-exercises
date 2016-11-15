@@ -1,6 +1,16 @@
 # Cards
 
-**TODO: Add description**
+```
+$ iex -S mix
+iex> Cards.create_deck
+```
+
+Update documentation:
+
+```
+$ mix docs
+$ open doc/index.html
+```
 
 ## Installation
 
@@ -21,4 +31,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:cards]]
     end
     ```
-
