@@ -16,7 +16,7 @@ defmodule MyList do
 
 end
 ```
-
+---
 2\. Write a `max(list)` that returns the element with the maximum value in the list.  (This is slightly trickier than it sounds.)
 
 ```elixir
@@ -28,8 +28,9 @@ defmodule MyList do
   defp _max([_head | tail], current), do:  _max(tail, current)
 end
 ```
-> Note the clever use of pattern matching to create 2 variables that can be used separately in the first method definition!
+> Note the clever use of pattern matching to create 2 variables that can be used separately in the first method definition!  This could have easily been written `def max([head | tail]), do: _max([head | tail], head)`
 
+---
 3\. An Elixir single-quoted string is actually a list of individual character codes.  Write a `caesar(list, n)` function that adds _n_ to each list element, wrapping if the addition results in a character greater than _z_.
 `iex> MyList.caesar('ryvkve', 13)`
 
@@ -45,3 +46,13 @@ defmodule MyList do
 end
 ```
 > Note the interesting way of building a returned array by using `[orig | append ]`
+
+---
+4\. Write a function `MyList.span(from, to)` that returns a list of the numbers from `from` to `to`.
+```elixir
+defmodule MyList do
+  def span(from, to), do: _span(from, to)
+  defp _span(from, to) when from <= to, do: [ from | _span(from+1, to) ]
+  defp _span(_,_), do: []
+end
+```
