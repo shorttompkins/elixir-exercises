@@ -1,6 +1,6 @@
 ### Chapter 6 - Modules and Named Functions
 
-```
+```elixir
 defmodule Times do
   def double(n), do: n * 2
 end
@@ -8,7 +8,7 @@ end
 
 1\. Extend the `Times` module with a `triple` function that multiplies its parameter by three.
 
-```
+```elixir
 defmodule Times do
   def double(n), do: n * 2
   def triple(n) do
@@ -19,7 +19,7 @@ end
 ---
 2\. Run the result in iex. Use both techniques to compile the file.
 
-```
+```elixir
 $ iex "ex01-03.exs"
 iex> Times.double(2)
 4
@@ -36,7 +36,7 @@ iex> double(6)
 ---
 3\. Add a `quadruple` function.  (Maybe it could call the `double` function...)
 
-```
+```elixir
 def quadruple(n) do
   double(n) * 2
 end
@@ -49,7 +49,7 @@ iex> quadruple(10)
 ---
 4\. Implement and run a function `sum(n)` that uses recursion to calculate the sum of the integers from 1 to _n_. (Write code in separate .exs file and load using iex.)
 
-```
+```elixir
 defmodule Chap6 do
   def sum(n), do: _sum(n, 0)
 
@@ -64,7 +64,7 @@ iex> Chap6.sum(10)
 ---
 5\. Write a function `gcd(x,y)` that finds the greatest common divisor between two nonnegative integers.  Algebraically, _gcd(x,y)_ is _x_ if _y_ is zero; it's _gcd(y,rem(x,y))_ otherwise.
 
-```
+```elixir
 defmodule Chap6 do
   def gcd(x, 0), do: x
   def gcd(x, y) do
@@ -96,7 +96,7 @@ Is it 273
 273
 ```
 
-```
+```elixir
 defmodule Chap6 do
 
   def guess(actual, lo..hi) do
@@ -119,3 +119,32 @@ defmodule Chap6 do
 
 end
 ```
+---
+7\. Find the library functions to do the following and then use each in iex.
+
+ - Convert a float to a string with two decimal digits. (Erlang)
+ ```
+ ???
+ ```
+ - Get the value of an operating system environment variable. (Elixir)
+ ```
+ iex> System.get_env("EDITOR")
+ "/usr/local/bin/subl -w"
+ ```
+ - Return the extension component of a file name (so return _.exs_ if given "dave/test.exs"). (Elixir)
+ ```
+ iex> Path.extname("dave/test.exs")
+ ".exs"
+ ```
+ - Return the process's current working directory.  (Elixir)
+ ```
+ iex> { :ok, workingdir } = File.cwd()
+ {:ok, "/Users/jkrol/repos/elixir-exercises/programming-elixir-1.3/chap06"}
+ iex> workingdir
+ "/Users/jkrol/repos/elixir-exercises/programming-elixir-1.3/chap06"
+ ```
+ - Execute a command in your operating system's shell.
+ ```
+iex> System.cmd("pwd", [])
+{"/Users/jkrol/repos/elixir-exercises/programming-elixir-1.3/chap06\n", 0}
+ ```

@@ -22,7 +22,7 @@ iex> pair_tuple_to_list.({1234,5678})
 ---
 2\. Write a function that takes three arguments.  If the first two are zero, return "FizzBuzz".  If the first is zero, return "Fizz".  If the second is zero, return "Buzz".  Otherwise return the third argument.  Do not use any language features that we haven't covered in this book (so far).
 
-```
+```elixir
 fizzbuzz = fn
   (0,0,_) -> "FizzBuzz"
   (0,_,_) -> "Fizz"
@@ -38,7 +38,7 @@ fizzbuzz.(0,0,123123) => "FizzBuzz"
 ---
 3\. The operator `rem(a,b)` returns the remainder after dividing `a` by `b`.  Write a function that takes a single integer (`n`) and calls the function in the previous exercise, passing it `rem(n, 3)`, and `n`.  Call it seven times with the arguments 10, 11, 12, and so on.  You should get "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16.
 
-```
+```elixir
 fizzbuzz = fn
   (0,0,_) -> "FizzBuzz"
   (0,_,_) -> "Fizz"
@@ -61,7 +61,7 @@ IO.puts fuzzer.(16)
 ---
 4\. Write a function `prefix` that takes a string.  It should return a new function that takes a second string.  When that second function is called, it will return a string containing the first string, a space, and the second string.
 
-```
+```elixir
 prefix = fn (str) -> (fn (msg) -> str <> " " <> msg end) end
 
 mrs = prefix.("Mrs")
