@@ -1,8 +1,8 @@
 defmodule MyList do
-  # def max(list = [head | _tail]), do: _max(list, head)
-  def max([head | tail]), do: _max([head | tail], head)
+  # def max([head | tail]), do: do_max([head | tail], head)   # ok...
+  def max(list = [head | _tail]), do: do_max(list, head)      # better!
 
-  defp _max([], current), do: current
-  defp _max([head | tail], current) when head > current, do: _max(tail, head)
-  defp _max([_head | tail], current), do:  _max(tail, current)
+  defp do_max([], current), do: current
+  defp do_max([head | tail], current) when head > current, do: do_max(tail, head)
+  defp do_max([_head | tail], current), do:  do_max(tail, current)
 end

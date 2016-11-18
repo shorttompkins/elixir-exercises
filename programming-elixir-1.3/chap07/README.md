@@ -5,13 +5,13 @@
 ```elixir
 defmodule MyList do
   def mapsum(list, func) do
-    _mapsum(list, func, 0)
+    do_mapsum(list, func, 0)
   end
 
-  defp _mapsum([head | []], func, acc), do: acc + func.(head)
+  defp do_mapsum([head | []], func, acc), do: acc + func.(head)
 
-  defp _mapsum([head | tail], func, acc) do
-    _mapsum(tail, func, acc + func.(head))
+  defp do_mapsum([head | tail], func, acc) do
+    do_mapsum(tail, func, acc + func.(head))
   end
 
 end
@@ -21,11 +21,11 @@ end
 
 ```elixir
 defmodule MyList do
-  def max(list = [head | _tail]), do: _max(list, head)
+  def max(list = [head | _tail]), do: do_max(list, head)
 
-  defp _max([], current), do: current
-  defp _max([head | tail], current) when head > current, do: _max(tail, head)
-  defp _max([_head | tail], current), do:  _max(tail, current)
+  defp do_max([], current), do: current
+  defp do_max([head | tail], current) when head > current, do: do_max(tail, head)
+  defp do_max([_head | tail], current), do:  do_max(tail, current)
 end
 ```
 > Note the clever use of pattern matching to create 2 variables that can be used separately in the first method definition!  This could have easily been written `def max([head | tail]), do: _max([head | tail], head)`
@@ -51,8 +51,8 @@ end
 4\. Write a function `MyList.span(from, to)` that returns a list of the numbers from `from` to `to`.
 ```elixir
 defmodule MyList do
-  def span(from, to), do: _span(from, to)
-  defp _span(from, to) when from <= to, do: [ from | _span(from+1, to) ]
-  defp _span(_,_), do: []
+  def span(from, to), do: do_span(from, to)
+  defp do_span(from, to) when from <= to, do: [ from | do_span(from+1, to) ]
+  defp do_span(_,_), do: []
 end
 ```
