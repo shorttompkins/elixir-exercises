@@ -27,5 +27,5 @@ iex(10)> Enum.sort(1..10, &(&2 < &1))
 1\. Implement the following `Enum` functions using no library functions or list comprehensions: `all?`, `each`, `filter`, `split`, and `take`.  You may need to use an `if` statement to implement `filter`.
 
 ```
-see ex01.exs
+see: ex01.exs
 ```
