@@ -49,6 +49,7 @@ defmodule MyList do
   end
 end
 ```
+> Note the fancy newer way of creating the `span` function
 
 ---
 3\. The Pragmatic Bookshelf has offices in Texas (TX) and North Carolina (NC), so we have to charge sales tax on orders shipped to these states. The rates can be expressed as a keyword list:
