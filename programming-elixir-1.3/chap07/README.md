@@ -51,8 +51,7 @@ end
 4\. Write a function `MyList.span(from, to)` that returns a list of the numbers from `from` to `to`.
 ```elixir
 defmodule MyList do
-  def span(from, to), do: do_span(from, to)
-  defp do_span(from, to) when from <= to, do: [ from | do_span(from+1, to) ]
-  defp do_span(_,_), do: []
+  def span(from, to) when from > to, do: []
+  def span(from, to), do: [ from | span(from+1, to) ]
 end
 ```
