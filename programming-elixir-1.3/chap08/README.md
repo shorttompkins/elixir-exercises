@@ -37,6 +37,15 @@ iex(10)> new_map |> Map.values
 ["39", "Playstation 4", "cheeseburger", "Bayonetta", "Jason"]
 ```
 
+Needed a version of `Map.take` (before realizing that it existed) so wrote the following:
+```elixir
+  def take(list, fields), do: Enum.map(list, &(_take &1, fields, %{}))
+  defp _take(_item, [], new_map), do: new_map
+  defp _take(item, [head|tail], new_map) do
+    _take item, tail, Map.put_new(new_map, head, Map.get(item, head))
+  end
+```
+
 #### Pattern Matching:
 ```elixir
 iex(11)> %{ food: food } = new_map
