@@ -1,7 +1,6 @@
 defmodule Stack.Server do
   use GenServer
 
-
   #####
   # External API
 
@@ -45,7 +44,8 @@ defmodule Stack.Server do
 
   def terminate(reason, {current_list, stash_pid}) do
     Stack.Stash.save_value(stash_pid, current_list)
-    IO.puts "Stack.Server terminated because: #{reason}."
+    IO.puts "Stack.Server terminated because:"
+    IN.inpsect reason
   end
 
 end
