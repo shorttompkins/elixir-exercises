@@ -27,4 +27,4 @@ a = 1 => 1
 ^a = 1 => (MatchError) no match of right hand side value: 1
 ^a = 2 - a => (MatchError) no match of right hand side value: 0
 ```
-> Have to remmeber that `^` will pin the value so that a reassignment will not occur.
+> Have to remember that `^` will pin the value so that a reassignment will not occur.
