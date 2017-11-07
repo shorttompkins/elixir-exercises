@@ -17,11 +17,6 @@ body, form, ul, table {
 /* Phoenix flash messages */
 .alert:empty { display: none; }
 
-/* Phoenix inline forms in links and buttons */
-form.link, form.button {
-  display: inline;
-}
-
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -40,6 +35,16 @@ form.link, form.button {
 .marketing {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.help-block {
+  color: #800000;
+  font-weight: bold;
+  margin-left: 0;
+  border-left: solid 4px #800000;
+  padding-left: .25em;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 /* Customize container */

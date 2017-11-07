@@ -10,10 +10,10 @@ config :rumbl,
   ecto_repos: [Rumbl.Repo]
 
 # Configures the endpoint
-config :rumbl, Rumbl.Endpoint,
+config :rumbl, RumblWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "AFD4rgwmzM2wSqaNQQcaGeKd9wMU4rDSMtfzheZeNuwVRX8b8cdB3paFqi5KObdz",
-  render_errors: [view: Rumbl.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "HQBdrWvpkNEYEhWcnwauY2x4APvhx3XH//LR4EkklSA+2jSOh9fGKSHYwmq8qNp0",
+  render_errors: [view: RumblWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Rumbl.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
