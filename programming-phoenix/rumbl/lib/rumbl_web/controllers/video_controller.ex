@@ -2,9 +2,19 @@ defmodule RumblWeb.VideoController do
   use RumblWeb, :controller
 
   alias Rumbl.Media
-  alias Rumbl.Media.Video
+  alias Rumbl.Media.{Video, Category}
 
   import Ecto, only: [build_assoc: 2, assoc: 2]
+
+  plug :load_categories when action in [:new, :create, :edit, :update]
+
+  defp load_categories(conn, _) do
+    categories = Category
+            |> Rumbl.Media.alphabetical
+            |> Rumbl.Media.names_and_ids
+            |> Rumbl.Media.list_categories
+    assign(conn, :categories, categories)
+  end
 
   # this overrides the default action and ensures that every controller action will have user injected as the 3rd parameter:
   def action(conn, _) do
@@ -27,7 +37,7 @@ defmodule RumblWeb.VideoController do
       user
       |> build_assoc(:videos)
       |> Video.changeset()
-
+    IO.puts inspect(conn.assigns)
     render(conn, "new.html", changeset: changeset)
   end
 
@@ -74,4 +84,5 @@ defmodule RumblWeb.VideoController do
     |> put_flash(:info, "Video deleted successfully.")
     |> redirect(to: video_path(conn, :index))
   end
+
 end
