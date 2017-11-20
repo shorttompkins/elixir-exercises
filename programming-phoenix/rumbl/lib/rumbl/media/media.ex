@@ -39,7 +39,7 @@ defmodule Rumbl.Media do
       ** (Ecto.NoResultsError)
 
   """
-  def get_video!(user, id), do: Repo.get!(user, id)
+  def get_video!(video, id), do: Repo.get!(video, id)
 
   @doc """
   Creates a video.

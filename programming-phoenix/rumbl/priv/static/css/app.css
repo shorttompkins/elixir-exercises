@@ -47,6 +47,10 @@ body, form, ul, table {
   border-bottom-left-radius: 2px;
 }
 
+#msg-container {
+  min-height: 190px;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
